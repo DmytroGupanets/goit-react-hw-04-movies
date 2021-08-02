@@ -10,8 +10,31 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.add_info__list {
+  display: flex;
+  list-style: none;
+}
+
+.movie__info_link {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-left: 30px;
+
+  font-size: 20px;
+  color: blue;
+}
+
+.movie__info_link_active {
+  border-bottom: 2px solid blue;
 }

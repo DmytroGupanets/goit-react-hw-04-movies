@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 
-class App extends Component {
-  state = {};
+import { navRoutes } from "../routes/navRoutes";
+import ContentSwitcher from "./contentSwitcher/ContentSwitcher";
+import Header from "./header/Header";
 
+class App extends Component {
   render() {
-    return <></>;
+    return (
+      <>
+        <Header />
+
+        <main>
+          <ContentSwitcher routes={navRoutes} />
+        </main>
+      </>
+    );
   }
 }
 

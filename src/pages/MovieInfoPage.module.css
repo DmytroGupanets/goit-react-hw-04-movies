@@ -1,0 +1,63 @@
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 20px;
+}
+
+.return_button {
+  padding: 5px 15px;
+  margin-bottom: 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  background-color: rgb(50, 205, 50);
+  border: 2px solid rgb(0, 184, 216);
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.return_button:hover,
+.return_button:focus {
+  background-color: rgba(0, 161, 0, 0.753);
+}
+
+.movie__main_wrapper {
+  display: flex;
+}
+
+.movie__img_wrapper {
+  flex-shrink: 0.5;
+}
+
+.movie__info_wrapper {
+  padding-left: 20px;
+}
+
+.movie__secondary_titles {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.movie__genres_list {
+  list-style: none;
+  display: flex;
+}
+
+.movie__genres_item:not(:first-child) {
+  margin-left: 20px;
+}
+
+.movie__add_info {
+  display: block;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.error_msg {
+  color: red;
+}
