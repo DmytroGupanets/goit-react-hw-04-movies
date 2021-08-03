@@ -1,0 +1,18 @@
+.return_button {
+  padding: 5px 15px;
+  margin-bottom: 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  background-color: rgb(50, 205, 50);
+  border: 2px solid rgb(0, 184, 216);
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.return_button:hover,
+.return_button:focus {
+  background-color: rgba(0, 161, 0, 0.753);
+}

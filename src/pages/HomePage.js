@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { fetchTrending } from "../services/movieApi";
 import MovieResults from "../components/movieResults/MovieResults";
-import styles from "./HomePage.module.css";
+import styles from "../components/container/Container.module.css";
 
 class HomePage extends Component {
   state = {

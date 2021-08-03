@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { RatingView } from "react-simple-star-rating";
-import { fetchMovieReviews } from "../services/movieApi";
+import { fetchMovieReviews } from "../../services/movieApi";
 import styles from "./MovieReviewsPage.module.css";
 
 class MovieReviewsPage extends Component {
@@ -12,6 +12,10 @@ class MovieReviewsPage extends Component {
     const response = await fetchMovieReviews(this.props.location.pathname);
 
     this.setState({ results: [...response] });
+
+    this.props.history.push({
+      state: { from: "/movie/" + this.props.match.params.id, search: "" },
+    });
   }
 
   render() {

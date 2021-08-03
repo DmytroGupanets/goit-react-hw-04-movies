@@ -5,7 +5,9 @@ export const infoRoutes = [
     name: "Cast",
     path: "/cast",
     component: lazy(() =>
-      import("../pages/MovieCastPage" /* webpackChunkName: "MovieCastPage" */)
+      import(
+        "../components/movieCast/MovieCastPage" /* webpackChunkName: "MovieCastPage" */
+      )
     ),
     exact: false,
   },
@@ -14,7 +16,7 @@ export const infoRoutes = [
     path: "/reviews",
     component: lazy(() =>
       import(
-        "../pages/MoviesReviewsPage" /* webpackChunkName: "MoviesReviewsPage" */
+        "../components/movieReviews/MovieReviewsPage" /* webpackChunkName: "MoviesReviewsPage" */
       )
     ),
     exact: false,

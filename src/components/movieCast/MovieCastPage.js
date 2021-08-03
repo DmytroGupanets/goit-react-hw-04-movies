@@ -1,8 +1,9 @@
 import { Component } from "react";
-import { fetchMovieCredits } from "../services/movieApi";
-import defaultImg from "../images/default.jpg";
+import { fetchMovieCredits } from "../../services/movieApi";
+import defaultImg from "../../images/default.jpg";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./MovieCastPage.module.css";
+import { withRouter } from "react-router-dom";
 
 class MovieCastPage extends Component {
   state = {
@@ -13,6 +14,10 @@ class MovieCastPage extends Component {
     const response = await fetchMovieCredits(this.props.match.params.id);
 
     this.setState({ actors: [...response] });
+
+    this.props.history.push({
+      state: { from: "/movie/" + this.props.match.params.id, search: "" },
+    });
   }
 
   render() {
@@ -48,4 +53,4 @@ class MovieCastPage extends Component {
   }
 }
 
-export default MovieCastPage;
+export default withRouter(MovieCastPage);

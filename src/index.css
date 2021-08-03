@@ -38,3 +38,13 @@ img {
 .movie__info_link_active {
   border-bottom: 2px solid blue;
 }
+
+.movie_page__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
-import MovieResults from "../components/movieResults/MovieResults";
-import { fetchSearch } from "../services/movieApi";
-import styles from "./MoviePage.module.css";
 import queryString from "query-string";
+import { fetchSearch } from "../services/movieApi";
+import MovieResults from "../components/movieResults/MovieResults";
+import MovieSearchForm from "../components/movieSearchForm/MovieSearchForm";
 
 class MoviePage extends Component {
   state = {
@@ -29,6 +29,7 @@ class MoviePage extends Component {
 
     const response = await fetchSearch(this.state.searchQuery);
     this.setState({ results: [...response] });
+
     this.props.history.push({
       pathname: this.props.location.pathname,
       search: `query=${this.state.searchQuery}`,
@@ -37,21 +38,12 @@ class MoviePage extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <form className={styles.search__form} onSubmit={this.onFormSubmit}>
-          <input
-            className={styles.search__input}
-            type="text"
-            name="searchQuery"
-            value={this.state.searchQuery}
-            onChange={this.onHandleChange}
-          />
-
-          <button className={styles.search__button} type="submit">
-            Search
-          </button>
-        </form>
-
+      <div className="movie_page__container">
+        <MovieSearchForm
+          value={this.state.searchQuery}
+          onChange={this.onHandleChange}
+          onSubmit={this.onFormSubmit}
+        />
         {this.state.results.length > 0 && (
           <MovieResults results={this.state.results} />
         )}
