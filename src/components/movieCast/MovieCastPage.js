@@ -14,14 +14,11 @@ class MovieCastPage extends Component {
     const response = await fetchMovieCredits(this.props.match.params.id);
 
     this.setState({ actors: [...response] });
-
-    this.props.history.push({
-      state: { from: "/movie/" + this.props.match.params.id, search: "" },
-    });
   }
 
   render() {
     const { actors } = this.state;
+    console.log(this.props.state);
 
     return (
       <ul className={styles.cast__list}>

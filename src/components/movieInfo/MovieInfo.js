@@ -4,7 +4,7 @@ import { infoRoutes } from "../../routes/infoRoutes";
 import Navigation from "../navigation/Navigation";
 import styles from "./MovieInfo.module.css";
 
-const MovieInfo = ({ movieInfo, url }) => {
+const MovieInfo = ({ movieInfo, url, savedResult }) => {
   return (
     <>
       <div className={styles.movie__main_wrapper}>
@@ -55,7 +55,7 @@ const MovieInfo = ({ movieInfo, url }) => {
         <span className={styles.movie__add_info}>
           Average vote rate: {movieInfo.data.vote_average}
         </span>
-        <Navigation routes={infoRoutes} url={url} />
+        <Navigation routes={infoRoutes} url={url} savedResult={savedResult} />
       </div>
     </>
   );

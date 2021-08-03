@@ -15,6 +15,9 @@ class MovieInfoPage extends Component {
   async componentDidMount() {
     const response = await fetchMovieDetails(this.props.location.pathname);
     this.setState({ movieInfo: response });
+
+    this.props.match.params = this.props.history.state;
+    console.log(this.props.params);
   }
 
   handleReturn = () => {
@@ -31,7 +34,11 @@ class MovieInfoPage extends Component {
       <div className={styles.container}>
         <GoBackButton handleReturn={this.handleReturn} />
         {movieInfo ? (
-          <MovieInfo movieInfo={movieInfo} url={this.props.match.url} />
+          <MovieInfo
+            movieInfo={movieInfo}
+            url={this.props.match.url}
+            savedResult={this.props.history.location.state}
+          />
         ) : (
           <h2>Error! No any info found.</h2>
         )}

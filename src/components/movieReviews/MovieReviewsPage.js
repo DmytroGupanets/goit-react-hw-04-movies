@@ -12,10 +12,6 @@ class MovieReviewsPage extends Component {
     const response = await fetchMovieReviews(this.props.location.pathname);
 
     this.setState({ results: [...response] });
-
-    this.props.history.push({
-      state: { from: "/movie/" + this.props.match.params.id, search: "" },
-    });
   }
 
   render() {
